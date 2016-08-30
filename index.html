@@ -65,6 +65,66 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Ubuntu终端下翻墙" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/30/Ubuntu终端下翻墙/" class="article-date">
+  <time datetime="2016-08-30T13:09:51.000Z" itemprop="datePublished">2016-08-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/30/Ubuntu终端下翻墙/">Ubuntu终端下翻墙</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>&emsp;&emsp;某一天我需要爬取Twitter下的数据，发现光浏览器里能访问<a href="https://twitter.com" target="_blank" rel="external">twitter.com</a>是不行的，必须要在终端下能访问，于是就在Linux安装了shadowsocks和proxychains实现终端翻墙。</p>
+<p>proxychains安装：</p>
+<pre><code>git clone https://github.com/rofl0r/proxychains-ng.git
+cd proxychains-ng
+./configure
+make &amp; make install
+cp ./src/proxychains.conf /etc/proxychains.conf
+cd .. &amp;&amp; rm -rf proxychains-ng
+</code></pre><p>proxychains.conf配置：</p>
+<pre><code>vim /etc/proxychains.conf
+</code></pre><p>将socks4 127.0.0.1 9095改成自己的端口:</p>
+<p><img style="height:80px;" src="http://ocpsqndpn.bkt.clouddn.com/01.png"></p>
+<p>shadowsocks安装：</p>
+<pre><code>sudo apt-get install python-pip
+pip install shadowsocks
+</code></pre><p>在／etc目录下新建文件shadowsocks.json,并配置如下：</p>
+<p><img style="height:180px;" src="http://ocpsqndpn.bkt.clouddn.com/02.png"></p>
+<p>使用方法：</p>
+<p>在一个终端运行：</p>
+<pre><code>sslocal -c /etc/shadowsocks.json
+</code></pre><p>另起一个终端在需要代理的命令前加上proxychains4,如下：</p>
+<p><img style="height:180px;" src="http://ocpsqndpn.bkt.clouddn.com/03.png"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/08/30/Ubuntu终端下翻墙/" data-id="cishhtevo0000jssexyz37x2y" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-热爱生活" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/08/29/热爱生活/" class="article-date">
@@ -90,12 +150,12 @@
         <p>我不去想是否能够成功<br><br>既然选择了远方<br><br>便只顾风雨兼程</p>
 <p><br>我不去想能否赢得爱情<br><br>既然钟情于玫瑰<br><br>就勇敢地吐露真诚</p>
 <p><br>我不去想身后会不会袭来寒风冷雨<br><br>既然目标是地平线<br><br>留给世界的只能是背影</p>
-<p><br>我不去想未来是平坦还是泥泞<br><br>只要热爱生命<br></p>
+<p><br>我不去想未来是平坦还是泥泞<br><br>只要热爱生命<br><br>一切，都在意料之中</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/08/29/热爱生活/" data-id="cishhigz40000ftseufxwqaxs" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2016/08/29/热爱生活/" data-id="cishhtew90004jsselj1niw6g" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/生活/">生活</a></li></ul>
@@ -119,7 +179,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Mot-clés</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活/">生活</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活/">生活</a></li></ul>
     </div>
   </div>
 
@@ -129,7 +189,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Nuage de mot-clés</h3>
     <div class="widget tagcloud">
-      <a href="/tags/生活/" style="font-size: 10px;">生活</a>
+      <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/生活/" style="font-size: 10px;">生活</a>
     </div>
   </div>
 
@@ -149,6 +209,10 @@
     <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/08/30/Ubuntu终端下翻墙/">Ubuntu终端下翻墙</a>
+          </li>
         
           <li>
             <a href="/2016/08/29/热爱生活/">热爱生活</a>
